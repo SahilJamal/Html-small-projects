@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* This ensures padding and border are included in the element's total width and height */
+}
+
+body, html {
+    height: 100%; /* Make sure both body and html take up the full height of the screen */
+}
+
+.hero {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 100vh; /* Set hero height to 100% of the viewport height */
+}
+
+.hero .location {
+    display: flex;
+    align-items: center; /* Vertically aligns the SVG and input together */
+    border: 1px solid #ccc; /* Border for the location container */
+    border-radius: 5px 0px 0px 5px; /* Rounded corners for the location container */
+    gap: 10px; /* Space between the icon and the text */
+    height: 40px;
+    padding-left: 10px; /* Adds space between the line and the search icon */
+}
+
+.hero .location img {
+    width: 30px; /* Adjust SVG size */
+    height: 31px; /* Adjust SVG size */
+}
+
+.hero .location .location-details {
+    padding: 10px;
+    font-size: 16px;
+    border: none; /* No border */
+    outline: none; /* No outline */
+    max-width: 200px; /* Set max width for the location details */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+.hero .search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc; /* Border for the search container */
+    border-radius: 0px 5px 5px 0px ; /* Rounded corners for the search container */
+    gap: 10px; /* Space between the icon and the input */
+    padding-left: 10px; /* Adds space between the line and the search icon */
+}
+
+.hero .search img {
+    width: 25px; /* Adjust SVG size */
+    height: 31px; /* Adjust SVG size */
+    margin-left: 5px; /* Add space from the left edge */
+}
+
+.hero .search input {
+    padding: 10px;
+    font-size: 16px;
+    border: none; /* No border */
+    outline: none; /* No outline */
+    width: 300px; /* Set input width */
+    border-radius: 0 5px 5px 0; /* Rounded corners on the right side */
+}
+
+.search {
+    position: relative;
+}
+
+.placeholder {
+    position: absolute;
+    left: 60px; /* Adjust to match the input padding */
+    top: 50%;
+    transform: translateY(-50%); /* Center the placeholder vertically */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: absolute; /* Position it to avoid overlap */
+    color: #999; /* Placeholder color */
+    pointer-events: none; /* Allow clicks to go through */
+}
+
+.placeholder.up {
+    transform: translateY(-150%); /* Move the placeholder up */
+    opacity: 0; /* Fade out when moved up */
+}
+
+.placeholder.next {
+    opacity: 0; /* Start hidden */
+    z-index: 1; /* Keep the next placeholder above */
+}
+
